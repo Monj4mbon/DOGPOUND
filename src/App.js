@@ -2,6 +2,11 @@ import React from 'react';
 
 export default function App(){
   return (
-    <h1>Hello World 4!</h1>
+    <div className="container">
+      <div className="text-center">
+        
+
+      </div>
+    </div>
   );
 }
