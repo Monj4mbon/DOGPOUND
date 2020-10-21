@@ -9,9 +9,9 @@ export default class Liste extends React.Component {
 
                 
                 <div>
-                <button className="btn btn-outline-success">Présent(e)</button>
-                <button className="btn btn-outline-warning">Retard</button>
-                <button className="btn btn-outline-danger">Absent(e)</button>
+                <button className="btn">Présent(e)</button>
+                <button className="btn">Retard</button>
+                <button className="btn">Absent(e)</button>
                 </div>
 
                 </div>

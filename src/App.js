@@ -1,6 +1,6 @@
 import React from 'react';
 import Liste from "./components/Liste";
-
+import Card from "./components/filtre/menu_filtre.js";
 
 export default class App extends React.Component{
 constructor() {
@@ -59,6 +59,9 @@ return(
     <div className="">
     <input type="text" className=" mr-3" onChange={e => this.handleChange(e)} value={this.state.input} onKeyPress={this.enter}/>
     <button className="bouton" onClick={() => this.ajouter()} >Ajouter</button>
+    </div>
+    <div className="menu-filtre">
+      <Card />
     </div>
   
   <ul>
