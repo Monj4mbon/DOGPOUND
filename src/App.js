@@ -1,5 +1,6 @@
 import React from 'react';
 import Liste from "./components/Liste";
+import Liste2 from './components/ListeCodingSchool14';
 
 
 export default class App extends React.Component{
@@ -12,7 +13,7 @@ constructor() {
 }
 ajouter = () => {
 let x = this.state;
-if (x.input == "") {
+if (x.input === "") {
   return
   
 } else {
@@ -29,7 +30,7 @@ this.setState(x)
 
 enter = (e) => {
   let x = this.state
-  if (x.input == "") {
+  if (x.input === "") {
     return
   } else {
     if (e.key === "Enter") {
@@ -65,7 +66,11 @@ return(
     {
       this.state.value.map((e,i) => {
         return(
-          < Liste key={i}  valeur={e.valeur}/>
+          <div>
+
+            <Liste key={i}  valeur={e.valeur}/>
+            <Liste2/>
+          </div>
         )
         
       })
