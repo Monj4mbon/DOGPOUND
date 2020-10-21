@@ -1,7 +1,12 @@
 import React from 'react';
 import Liste from "./components/Liste";
 import Liste2 from './components/ListeCodingSchool14';
-
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 export default class App extends React.Component{
 constructor() {
@@ -97,28 +102,40 @@ handleChange(e) {
 render(){
 return(
   <div className="container-fluid justify-content-center d-flex align-items-center">
-  <div className="outman text-center">
-    <div id="h1"><h1 className="m-0 mb-5 mt-5 text-white">fiche de présence</h1></div>
-    <div className="">
-    <input type="text" className=" mr-3" onChange={e => this.handleChange(e)} value={this.state.input} onKeyPress={this.enter}/>
-    <button className="bouton" onClick={() => this.ajouter()} >Ajouter</button>
-    </div>
-  
-  <ul>
-    {
-      this.state.value.map((e,i) => {
-        return(
-          <div>
-            < Liste key={i}  valeur={e.valeur} valider={() => this.valider(i)} valider2={() => this.valider2(i)} valider3={() => this.valider3(i)} validate={e.validate} validate2={e.validate2} validate3={e.validate3}/>
+    <div className="outman text-center">
+      <div id="h1"><h1 className="m-0 mb-5 mt-5 text-white">fiche de présence</h1></div>
+      <Router>
+        <button><Link to="/">Accueil</Link></button>
+        <button><Link to="/codingschool14">Coding School 14</Link></button>
+        <Switch>
+          <Route path="/codingschool14">
             <Liste2/>
-          </div>
-        )
-        
-      })
-    } 
-  </ul>
+          </Route>
+          <Route path="/">
+            <div className="">
+                <input type="text" className=" mr-3" onChange={e => this.handleChange(e)} value={this.state.input} onKeyPress={this.enter}/>
+                <button className="bouton" onClick={() => this.ajouter()} >Ajouter</button>
+                </div>
+                
+              <ul>
+                {
+                  this.state.value.map((e,i) => {
+                    return(
+                      <div>
+                        < Liste key={i}  valeur={e.valeur} valider={() => this.valider(i)} valider2={() => this.valider2(i)} valider3={() => this.valider3(i)} validate={e.validate} validate2={e.validate2} validate3={e.validate3}/>
+                      </div>
+                    )
+                    
+                  })
+                } 
+              </ul>
+              <Liste2/>
+          </Route>
+        </Switch>
+      </Router>
+    </div>
+    
   </div>
-</div>
 )
 }
 }

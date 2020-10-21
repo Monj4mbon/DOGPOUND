@@ -3,6 +3,8 @@ import React from 'react';
 export default class Liste extends React.Component {
     render() {
         return (
+            <div>
+
             <li className="list-group">
                 <div className="d-flex justify-content-center">
                 <span className="text-light">{this.props.valeur}</span>
@@ -17,6 +19,7 @@ export default class Liste extends React.Component {
                 </div>
                 
             </li>
+            </div>
         )
     }
 }
