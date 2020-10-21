@@ -8,51 +8,21 @@ class Liste2 extends React.Component {
         this.state = {
           input : "",
           value : [
-              
+ 
           ],
         }
       }
-      ajouter = () => {
-      let x = this.state;
-      if (x.input === "") {
-        return
-        
-      } else {
-        let objet = {
-          valeur : x.input,
-          validate : false
-        }
-        x.value.push(objet);
-        x.input = "";
-      }
-      
-      this.setState(x)
-      }
-      
-      enter = (e) => {
-        let x = this.state
-        if (x.input === "") {
-          return
-        } else {
-          if (e.key === "Enter") {
-            
-            let objet = {
-              valeur : x.input,
-              validate : false,
-              validate2 : false,
-              validate3 : false
-            }
-            x.value.push(objet);
-            x.input = "";
-            this.setState(x);
-            return
-          }
-        }
-        
-      }
+
       
       valider = (i) => {
         let y = this.state
+        let objet = {
+
+            validate : false,
+            validate2 : false,
+            validate3 : false
+          }
+          y.value.push(objet);
         if (y.value[i].validate === true) {
           y.value[i].validate = false
           
@@ -105,7 +75,7 @@ class Liste2 extends React.Component {
                         </div>
                         <div className="col-8 d-flex flex-nowrap">
                             <button className={`btn btn-outline-success ${this.state.validate === true ? "bg-success text-white" : "bg-white"} `} onClick={this.state.valider}>Présent(e)</button>
-                            <button className={` btn btn-outline-warning ${this.state.validate2 === true ? "bg-warning text-white" : "bg-white"} `} onClick={this.state.valider2}>Retard</button>
+                            <button className={` btn btn-outline-warning ${this.state.validate2 === true ? "bg-warning text-white" : "bg-white"} `} onClick={(i) => this.valider2()}>Retard</button>
                             <button className={` btn btn-outline-danger ${this.state.validate3 === true ? "bg-danger text-white" : "bg-white"} `} onClick={this.state.valider3}>Absent(e)</button>
                         </div>
                     </div>
@@ -115,7 +85,7 @@ class Liste2 extends React.Component {
                             eleve 2
                         </div>
                         <div className="col-8 d-flex flex-nowrap">
-                            <button className={`btn btn-outline-success ${this.state.validate === true ? "bg-success text-white" : "bg-white"} `} onClick={() => this.valider()}>Présent(e)</button>
+                            <button className={`btn btn-outline-success ${this.state.validate === true ? "bg-success text-white" : "bg-white"} `} onClick={(i) => this.valider()}>Présent(e)</button>
                             <button className={` btn btn-outline-warning ${this.state.validate2 === true ? "bg-warning text-white" : "bg-white"} `} onClick={this.state.valider2}>Retard</button>
                             <button className={` btn btn-outline-danger ${this.state.validate3 === true ? "bg-danger text-white" : "bg-white"} `} onClick={this.state.valider3}>Absent(e)</button>
                         </div>
