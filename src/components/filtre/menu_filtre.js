@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import './menu_filtre.css';
+
+
 
 class Card extends Component {
   constructor() {
@@ -30,6 +33,12 @@ class Card extends Component {
   }
 
   filterPres = () => {
+    // let a = this.state 
+    // if (a.) {
+      
+    // } else {
+      
+    // }
     console.log("pres");
   }
 
