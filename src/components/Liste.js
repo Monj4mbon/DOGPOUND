@@ -5,9 +5,7 @@ export default class Liste extends React.Component {
         return (
             <li className="list-group bg-light">
                 <div className="d-flex justify-content-center">
-                <span>{this.props.valeur}</span>
-
-                
+                    <span>{this.props.valeur}</span>
                 <div>
                 <button className="btn">Présent(e)</button>
                 <button className="btn">Retard</button>

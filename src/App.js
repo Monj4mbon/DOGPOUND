@@ -69,8 +69,7 @@ return(
       this.state.value.map((e,i) => {
         return(
           < Liste key={i}  valeur={e.valeur}/>
-        )
-        
+        )        
       })
     } 
   </ul>
