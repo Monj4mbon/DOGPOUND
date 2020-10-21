@@ -55,10 +55,10 @@ render(){
 return(
   <div className="container-fluid justify-content-center d-flex align-items-center">
   <div className="outman text-center">
-    <div><h1 className="m-0 mb-5 mt-5">fiche de présence</h1></div>
+    <div id="h1"><h1 className="m-0 mb-5 mt-5 text-white">fiche de présence</h1></div>
     <div className="">
     <input type="text" className=" mr-3" onChange={e => this.handleChange(e)} value={this.state.input} onKeyPress={this.enter}/>
-    <button className="" onClick={() => this.ajouter()} >Ajouter</button>
+    <button className="bouton" onClick={() => this.ajouter()} >Ajouter</button>
     </div>
   
   <ul>
