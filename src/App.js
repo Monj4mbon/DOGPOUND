@@ -7,6 +7,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import Liste1 from './components/ListeCodingSchool13';
 
 export default class App extends React.Component{
 constructor() {
@@ -106,30 +107,14 @@ return(
       <div id="h1"><h1 className="m-0 mb-5 mt-5 text-white">fiche de présence</h1></div>
       <Router>
         <button><Link to="/">Accueil</Link></button>
+        <button><Link to="/codingschool13">Coding School 13</Link></button>
         <button><Link to="/codingschool14">Coding School 14</Link></button>
         <Switch>
+        <Route path="/codingschool13">
+            <Liste1/>
+          </Route>
           <Route path="/codingschool14">
             <Liste2/>
-          </Route>
-          <Route path="/">
-            <div className="">
-                <input type="text" className=" mr-3" onChange={e => this.handleChange(e)} value={this.state.input} onKeyPress={this.enter}/>
-                <button className="bouton" onClick={() => this.ajouter()} >Ajouter</button>
-                </div>
-                
-              <ul>
-                {
-                  this.state.value.map((e,i) => {
-                    return(
-                      <div>
-                        < Liste key={i}  valeur={e.valeur} valider={() => this.valider(i)} valider2={() => this.valider2(i)} valider3={() => this.valider3(i)} validate={e.validate} validate2={e.validate2} validate3={e.validate3}/>
-                      </div>
-                    )
-                    
-                  })
-                } 
-              <Liste2/>
-              </ul>
           </Route>
         </Switch>
       </Router>
