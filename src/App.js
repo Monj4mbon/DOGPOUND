@@ -1,6 +1,7 @@
 import React from 'react';
 import Liste from "./components/Liste";
 
+
 export default class App extends React.Component{
 constructor() {
   super();
@@ -52,12 +53,14 @@ handleChange(e) {
 }
 render(){
 return(
-  <div className="container">
-  <div className="text-center">
-    <h1>fiche de présence</h1>
-    <input type="text" className="w-50" onChange={e => this.handleChange(e)} value={this.state.input} onKeyPress={this.enter}/>
-    <button className="w-25" onClick={() => this.ajouter()} >Ajouter</button>
-  </div>
+  <div className="container-fluid justify-content-center d-flex align-items-center">
+  <div className="outman text-center">
+    <div><h1 className="m-0 mb-5 mt-5">fiche de présence</h1></div>
+    <div className="">
+    <input type="text" className=" mr-3" onChange={e => this.handleChange(e)} value={this.state.input} onKeyPress={this.enter}/>
+    <button className="" onClick={() => this.ajouter()} >Ajouter</button>
+    </div>
+  
   <ul>
     {
       this.state.value.map((e,i) => {
@@ -68,6 +71,7 @@ return(
       })
     } 
   </ul>
+  </div>
 </div>
 )
 }
