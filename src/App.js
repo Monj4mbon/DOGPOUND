@@ -27,17 +27,23 @@ this.setState(x)
 }
 
 enter = (e) => {
-  if (e.key === "Enter") {
-    let x = this.state
-    let objet = {
-      valeur : x.input,
-      validate : false
-    }
-    x.value.push(objet);
-    x.input = "";
-    this.setState(x);
+  let x = this.state
+  if (x.input == "") {
     return
+  } else {
+    if (e.key === "Enter") {
+      
+      let objet = {
+        valeur : x.input,
+        validate : false
+      }
+      x.value.push(objet);
+      x.input = "";
+      this.setState(x);
+      return
+    }
   }
+  
 }
 
 
