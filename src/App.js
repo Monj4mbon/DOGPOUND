@@ -12,7 +12,7 @@ constructor() {
 }
 ajouter = () => {
 let x = this.state;
-if (x.input == "") {
+if (x.input === "") {
   return
   
 } else {
@@ -29,14 +29,16 @@ this.setState(x)
 
 enter = (e) => {
   let x = this.state
-  if (x.input == "") {
+  if (x.input === "") {
     return
   } else {
     if (e.key === "Enter") {
       
       let objet = {
         valeur : x.input,
-        validate : false
+        validate : false,
+        validate2 : false,
+        validate3 : false
       }
       x.value.push(objet);
       x.input = "";
@@ -45,6 +47,46 @@ enter = (e) => {
     }
   }
   
+}
+
+valider = (i) => {
+  let y = this.state
+  if (y.value[i].validate === true) {
+    y.value[i].validate = false
+    
+  } else {
+    y.value[i].validate = true
+    y.value[i].validate2 = false
+    y.value[i].validate3 = false
+    
+  }
+  console.log("test");
+  this.setState(y)
+}
+valider2 = (i) => {
+  let z = this.state
+  if (z.value[i].validate2 === true) {
+    z.value[i].validate2 = false
+  } else {
+    z.value[i].validate2 = true
+    z.value[i].validate = false
+    z.value[i].validate3 = false
+    
+  }
+  console.log("test");
+  this.setState(z)
+}
+valider3 = (i) => {
+  let a = this.state
+  if (a.value[i].validate3 === true) {
+    a.value[i].validate3 = false
+  } else {
+    a.value[i].validate3 = true
+    a.value[i].validate = false
+    a.value[i].validate2 = false
+  }
+  console.log("test");
+  this.setState(a)
 }
 
 
@@ -65,7 +107,7 @@ return(
     {
       this.state.value.map((e,i) => {
         return(
-          < Liste key={i}  valeur={e.valeur}/>
+          < Liste key={i}  valeur={e.valeur} valider={() => this.valider(i)} valider2={() => this.valider2(i)} valider3={() => this.valider3(i)} validate={e.validate} validate2={e.validate2} validate3={e.validate3}/>
         )
         
       })
